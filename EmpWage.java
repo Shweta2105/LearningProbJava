@@ -7,14 +7,11 @@ public class EmpWage {
 	   private static int empWagePerHr;
 	   private static int Max_Working_Days;
 	   private static int Max_Working_Hrs;
-	public EmpWage(int empWagePerHr, int Max_Working_Days, int Max_Working_Hrs)
-	{
-	   this.empWagePerHr = empWagePerHr;
-	   this.Max_Working_Days = Max_Working_Days;
-	   this.Max_Working_Hrs = Max_Working_Hrs;
-	}
+	   
+	   
 
-	public void Wages()
+
+	public static int Wages(String company,int empWagePerHr, int Max_Working_Days, int Max_Working_Hrs)
 	{
 		int empHr=0,total_Emp_Wage=0, total_Emp_Hrs=0, totalWorkingDays=0;
 		  while(total_Emp_Hrs<=Max_Working_Hrs && totalWorkingDays<=Max_Working_Days)
@@ -31,11 +28,11 @@ public class EmpWage {
 	               break;
 	            case IS_PARTTIME:
 
-	               System.out.println("Parttime");
+	              System.out.println("Parttime");
 	               empHr=4;
 	               break;
 	            default:
-	               System.out.println("Employee is Absent");
+	              System.out.println("Employee is Absent");
 	               empHr=0;
 	         }
 	         total_Emp_Hrs += empHr;
@@ -43,15 +40,16 @@ public class EmpWage {
 	         System.out.println(total_Emp_Hrs);
 	      }
 		  total_Emp_Wage=total_Emp_Hrs*empWagePerHr;
-		  System.out.println(total_Emp_Wage);
+		  System.out.println("Total emp wage for company "+company+ " is ="+total_Emp_Wage);
+		  return total_Emp_Wage;
 	}
 	 public static void main(String[] args) {
 
-		EmpWage dMart = new EmpWage(20, 20, 100);
-
-	    dMart.Wages();    
-	    System.out.println(dMart);
-
+		
+		int totalWage = Wages("dMart",20,20,100);
+		
+		System.out.println(totalWage);
+	    
 	   }
 	}
 
