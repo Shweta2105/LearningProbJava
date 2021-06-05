@@ -3,14 +3,14 @@ package comPackage;
 public class EmpWage {
 	   public static final int IS_FULLTIME=1;
 	   public static final int IS_PARTTIME=2;
+	   
 	   private final String company;
+	   
 	   private static int empWagePerHr;
 	   private static int Max_Working_Days;
 	   private static int Max_Working_Hrs;
+	   
 	   private int total_Emp_Wage;
-	   
-	
-	   
 	   
 	public EmpWage(String company, int empWagePerHr, int Max_Working_Days, int Max_Working_Hrs)
 	{
